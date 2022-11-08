@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package ibc.lightclients.wasm.v1;
+
+option go_package = "github.com/cosmos/ibc-go/v6/modules/light-clients/10-wasm;wasm";
+
+import "google/protobuf/timestamp.proto";
+import "gogoproto/gogo.proto";
+
+
+// ClientState from Tendermint tracks the current validator set, latest height,
+// and a possible frozen height.
+message ClientState {
+  string chain_id = 1;
+}
+
+// ConsensusState defines the consensus state from Tendermint.
+message ConsensusState {
+  option (gogoproto.goproto_getters) = false;
+
+  // timestamp that corresponds to the block height in which the ConsensusState
+  // was stored.
+  google.protobuf.Timestamp timestamp = 1 [(gogoproto.nullable) = false, (gogoproto.stdtime) = true];
+}
+
+// Misbehaviour is a wrapper over two conflicting Headers
+// that implements Misbehaviour interface expected by ICS-02
+message Misbehaviour {
+
+  // ClientID is deprecated
+  string client_id = 1;
+}
+
+message Header {
+}
+

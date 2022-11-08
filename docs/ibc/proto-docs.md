@@ -362,6 +362,12 @@
     - [Header](#ibc.lightclients.tendermint.v1.Header)
     - [Misbehaviour](#ibc.lightclients.tendermint.v1.Misbehaviour)
   
+- [ibc/lightclients/wasm/v1/wasm.proto](#ibc/lightclients/wasm/v1/wasm.proto)
+    - [ClientState](#ibc.lightclients.wasm.v1.ClientState)
+    - [ConsensusState](#ibc.lightclients.wasm.v1.ConsensusState)
+    - [Header](#ibc.lightclients.wasm.v1.Header)
+    - [Misbehaviour](#ibc.lightclients.wasm.v1.Misbehaviour)
+  
 - [Scalar Value Types](#scalar-value-types)
 
 
@@ -5384,6 +5390,79 @@ that implements Misbehaviour interface expected by ICS-02
 | `client_id` | [string](#string) |  | **Deprecated.** ClientID is deprecated |
 | `header_1` | [Header](#ibc.lightclients.tendermint.v1.Header) |  |  |
 | `header_2` | [Header](#ibc.lightclients.tendermint.v1.Header) |  |  |
+
+
+
+
+
+ <!-- end messages -->
+
+ <!-- end enums -->
+
+ <!-- end HasExtensions -->
+
+ <!-- end services -->
+
+
+
+<a name="ibc/lightclients/wasm/v1/wasm.proto"></a>
+<p align="right"><a href="#top">Top</a></p>
+
+## ibc/lightclients/wasm/v1/wasm.proto
+
+
+
+<a name="ibc.lightclients.wasm.v1.ClientState"></a>
+
+### ClientState
+ClientState from Tendermint tracks the current validator set, latest height,
+and a possible frozen height.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `chain_id` | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="ibc.lightclients.wasm.v1.ConsensusState"></a>
+
+### ConsensusState
+ConsensusState defines the consensus state from Tendermint.
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `timestamp` | [google.protobuf.Timestamp](#google.protobuf.Timestamp) |  | timestamp that corresponds to the block height in which the ConsensusState was stored. |
+
+
+
+
+
+
+<a name="ibc.lightclients.wasm.v1.Header"></a>
+
+### Header
+
+
+
+
+
+
+
+<a name="ibc.lightclients.wasm.v1.Misbehaviour"></a>
+
+### Misbehaviour
+Misbehaviour is a wrapper over two conflicting Headers
+that implements Misbehaviour interface expected by ICS-02
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| `client_id` | [string](#string) |  | ClientID is deprecated |
 
 
 
